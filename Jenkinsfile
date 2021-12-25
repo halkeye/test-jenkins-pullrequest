@@ -4,7 +4,7 @@ pipeline {
     stage('test') {
       steps {
         script {
-          def comment = pullRequest.comments.toList.find { it.body.include("<!-- DEPLOY PREVIEW -->") }
+          def comment = pullRequest.comments.toList().find { it.body.include("<!-- DEPLOY PREVIEW -->") }
           if (comment != null) {
             pullRequest.editComment(comment.id, "<!-- DEPLOY PREVIEW --> EDITED COMMENT")
           } else {
