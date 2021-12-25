@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        echo(pullRequest.comments.toString())
+        echo(pullRequest.comments.toList().toString())
       }
     }
   }
