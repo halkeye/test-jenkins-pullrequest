@@ -8,7 +8,7 @@ pipeline {
           if (comment != null) {
             pullRequest.editComment(comment.id, "<!-- DEPLOY PREVIEW --> EDITED COMMENT")
           } else {
-            pullRequest.postComment("<!-- DEPLOY PREVIEW --> NEW COMMENT")
+            pullRequest.comment("<!-- DEPLOY PREVIEW --> NEW COMMENT")
           }
         }
       }
