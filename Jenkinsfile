@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        echo(pullRequest.comments.toList().toString())
+        script {
+          pullRequest.comments.toList().each { echo(it) }
+        }
       }
     }
   }
